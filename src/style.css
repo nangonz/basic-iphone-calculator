@@ -30,23 +30,23 @@ input[type="text"] {
   background-color: transparent;
   text-align: end;
   width: 100%;
-  color: #d2d2d2;
+  color: #3e3e3e;
   border: 0px;
   font-size: 4rem;
 }
 
 #main {
-  border: 2px solid #ededed;
+  border: .5rem solid #ff4901;
   border-radius: 3rem;
   width: 100%;
   max-width: 17.5rem;
-  background-color: #000;
+  background-color: #e0e0e0;
   padding: 2rem 1rem;
 }
 
 .calc-header {
-  margin-top: 90px;
-  padding: 12px;
+  margin-top: 5.5rem;
+  padding: .75rem;
 }
 
 .calc-footer > * + * {
@@ -59,9 +59,9 @@ input[type="text"] {
 
 .btn-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 0.3rem;
+  gap: .5rem;
 }
 
 .btn {
@@ -100,7 +100,7 @@ input[type="text"] {
 }
 
 .btn-dark-grey {
-  background-color: #313131;
+  background-color: #303030;
 }
 
 .btn-dark-grey:hover {
@@ -112,5 +112,5 @@ input[type="text"] {
 }
 
 .btn-orange:hover {
-  background-color: orange;
+  background-color: rgb(255, 179, 37);
 }
