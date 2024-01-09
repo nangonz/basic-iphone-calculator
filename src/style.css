@@ -116,3 +116,11 @@ input[type="text"] {
 .btn-orange:hover {
   background-color: rgb(255, 179, 37);
 }
+
+#operation {
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 16rem;
+  height: 2.5rem;
+}

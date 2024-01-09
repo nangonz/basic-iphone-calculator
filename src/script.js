@@ -2,7 +2,17 @@ const form = document.getElementById("calc-form")
 const output = document.getElementById("output")
 const operand_btns = document.querySelectorAll("button[data-type=operand]")
 const operator_btns = document.querySelectorAll("button[data-type=operator]");
+const prevOperation = document.getElementById("operation")
+const clearButton = document.querySelector("button[data-type=clear]")
 let is_operator = false
+let equation = []
+
+prevOperation.textContent = equation.join("")
+
+// add event on clearButton to reset prevOperation
+clearButton.addEventListener("click", ()=> {
+  prevOperation.textContent = ""
+})
 
 //stop form from submiting whenever we click a button
 form.addEventListener("submit", (event)=> {
@@ -27,12 +37,12 @@ operand_btns.forEach((btn) => {
 })
 
 // Add events to buttons with data-type operator to specify what will happen whenever we click on them
-let equation = [];
 
 operator_btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     remove_active()
     e.currentTarget.classList.add("active");
+    console.log(e.target.value)
 
     switch (e.target.value) {
       case "%":
@@ -44,6 +54,7 @@ operator_btns.forEach((btn) => {
       case "=":
         equation.push(output.value)
         output.value = evaluateExpression(equation.join(""))
+        prevOperation.textContent = equation.join(" ")+ " = "
         equation = []
         break
       default:
@@ -58,6 +69,7 @@ operator_btns.forEach((btn) => {
         is_operator = true
         break
     }
+    console.log(equation)
   });
 });
 
