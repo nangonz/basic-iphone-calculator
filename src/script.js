@@ -42,7 +42,6 @@ operator_btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     remove_active()
     e.currentTarget.classList.add("active");
-    console.log(e.target.value)
 
     switch (e.target.value) {
       case "%":
@@ -69,7 +68,6 @@ operator_btns.forEach((btn) => {
         is_operator = true
         break
     }
-    console.log(equation)
   });
 });
 
