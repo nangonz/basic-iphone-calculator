@@ -54,7 +54,7 @@ operator_btns.forEach((btn) => {
       case "=":
         equation.push(output.value)
         output.value = evaluateExpression(equation.join(""))
-        prevOperation.textContent = equation.join(" ")+ " = "
+        prevOperation.textContent = stringifyEquation(equation)
         equation = []
         break
       default:
@@ -84,4 +84,9 @@ const remove_active = () => {
   operator_btns.forEach((btn) => {
     btn.classList.remove("active");
   })
+}
+
+// convert equation into a string and replace multiply and divide operators
+function stringifyEquation (array) {
+  return array.join(" ").replace("*", "x").replace("/", "÷")
 }
