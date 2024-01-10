@@ -88,5 +88,6 @@ const remove_active = () => {
 
 // convert equation into a string and replace multiply and divide operators
 function stringifyEquation (array) {
-  return array.join(" ").replace("*", "x").replace("/", "÷")
+  let stringOperation = array.join(" ").replace("*", "x").replace("/", "÷")
+  return `${stringOperation} =`
 }
